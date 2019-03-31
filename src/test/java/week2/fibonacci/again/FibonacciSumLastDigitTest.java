@@ -15,6 +15,7 @@ class FibonacciSumLastDigitTest {
 
     @Test
     void getFibonacciSum() {
+        assertThat(FibonacciSumLastDigit.getFibonacciSum(0)).isEqualTo(0);
         assertThat(FibonacciSumLastDigit.getFibonacciSum(3)).isEqualTo(4);
         assertThat(FibonacciSumLastDigit.getFibonacciSum(100)).isEqualTo(5);
     }
