@@ -21,14 +21,18 @@ class LargestNumberTest {
 
   @Test
   void name() {
-    assertThat(LargestNumber.largestNumber(new String[]{"2", "22", "222", "3"})).isEqualTo("3222222");
-    assertThat(LargestNumber.largestNumber(new String[]{"3", "222", "22", "1"})).isEqualTo("3222221");
-    assertThat(LargestNumber.largestNumber(new String[]{"22", "22", "22", "22"})).isEqualTo("22222222");
-    assertThat(LargestNumber.largestNumber(new String[]{"1000", "100", "89", "899"})).isEqualTo("899891001000");
+    assertThat(LargestNumber.largestNumber(new String[]{"2", "22", "222", "3"}))
+        .isEqualTo("3222222");
+    assertThat(LargestNumber.largestNumber(new String[]{"3", "222", "22", "1"}))
+        .isEqualTo("3222221");
+    assertThat(LargestNumber.largestNumber(new String[]{"22", "22", "22", "22"}))
+        .isEqualTo("22222222");
+    assertThat(LargestNumber.largestNumber(new String[]{"1000", "100", "89", "899"}))
+        .isEqualTo("899891001000");
     assertThat(LargestNumber.largestNumber(new String[]{"797", "79", "7"})).isEqualTo("797977");
     assertThat(LargestNumber.largestNumber(new String[]{"7978", "79", "7"})).isEqualTo("7979787");
     assertThat(LargestNumber.largestNumber(new String[]{"79797", "79", "7"})).isEqualTo("79797977");
     assertThat(LargestNumber.largestNumber(new String[]{"778", "7"})).isEqualTo("7787");
-    assertThat(LargestNumber.largestNumber(new String[]{"778", "7", "7","8"})).isEqualTo("7787");
+    assertThat(LargestNumber.largestNumber(new String[]{"778", "7", "7", "8"})).isEqualTo("7787");
   }
 }
