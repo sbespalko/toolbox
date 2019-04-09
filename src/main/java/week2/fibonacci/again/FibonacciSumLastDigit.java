@@ -24,6 +24,10 @@ public class FibonacciSumLastDigit {
     }
 
     static long getFibonacciSum(long n) {
+        if (n <= 1) {
+            return n;
+        }
+
         List<Long> seq = getPisanoPeriod(10);
         int period = seq.size();
 

@@ -39,6 +39,9 @@ public class LargestNumber {
   }
 
   private static boolean isGreaterThen(String num, String maxDigit) {
+    if (num.length() == 0) {
+      return false;
+    }
     String firstPartNum = num.substring(0, maxDigit.length());
     int compare = Integer.compare(Integer.valueOf(firstPartNum), Integer.valueOf(maxDigit));
     if (compare > 0) {
@@ -47,14 +50,12 @@ public class LargestNumber {
     if (compare < 0) {
       return false;
     }
-    String lastPartNum = num
-        .substring(maxDigit.length(), Math.min(num.length(), maxDigit.length() * 2));
+    int minLength = Math.min(num.length(), maxDigit.length() * 2) - maxDigit.length();
     StringBuilder filler = new StringBuilder();
-    for (int i = 0; i < lastPartNum.length(); i++) {
+    for (int i = 0; i < minLength; i++) {
       filler.append(maxDigit.charAt(i));
     }
-    // return isGreaterThen(lastPartNum, filler.toString());
-    return Integer.valueOf(lastPartNum) > Integer.valueOf(filler.toString());
+    return isGreaterThen(num.substring(maxDigit.length()), filler.toString());
   }
 
   public static void main(String[] args) {
