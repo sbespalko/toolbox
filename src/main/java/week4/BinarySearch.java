@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 public class BinarySearch {
 
-  static int binarySearch(int[] a, int x) {
+  static int binarySearchOld(int[] a, int x) {
     int left = 0, right = a.length - 1;
     //write your code here
     int middle = (left + right) >> 1;
@@ -24,6 +24,24 @@ public class BinarySearch {
       middle = (left + right) >> 1;
     }
     return a[middle] == x ? middle : -1;
+  }
+
+  static int binarySearch(int[] a, int key) {
+    int low = 0;
+    int high = a.length - 1;
+
+    while (low <= high) {
+      int mid = (low + high) >>> 1;
+      int midVal = a[mid];
+
+      if (midVal < key)
+        low = mid + 1;
+      else if (midVal > key)
+        high = mid - 1;
+      else
+        return mid;
+    }
+    return -1;
   }
 
   static int linearSearch(int[] a, int x) {
